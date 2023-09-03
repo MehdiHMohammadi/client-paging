@@ -1,6 +1,5 @@
 const Card = ({ imageUrl, name, skills, mobile, email }) => {
   // const Card = (props) => {
-  console.log(imageUrl);
   return (
     <div className="card text-center border-0 shadow-lg">
       <div className="card-body">

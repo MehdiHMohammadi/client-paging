@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import usePaginatedFetch from "./hooks/usePaginatedFetch";
-import { useEffect } from "react";
 import Card from "./components/card";
 import Paginnation from "./components/pagination.jsx";
 
@@ -15,7 +14,7 @@ function App() {
   useEffect(() => {
     if (loading) return;
     setProgrammers(data[page - 1]);
-  }, [loading, page]);
+  }, [data, loading, page]);
 
   return (
     <>
@@ -28,7 +27,6 @@ function App() {
       </div>
       {!loading && (
         <div className="row d-flex justify-content-center ">
-          {/* {console.log(programmers)} */}
           {programmers.map(({ id, ...programmer }) => {
             return (
               <div className="col-3" key={id}>

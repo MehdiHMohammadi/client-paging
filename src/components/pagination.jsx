@@ -3,7 +3,6 @@ import _ from "lodash";
 const Paginnation = ({ pages, setPage, activePage }) => {
   const PreviousPage = (prev) => {
     let previous = prev - 1;
-    console.log(previous);
     if (previous === 0) {
       previous = pages;
     }
