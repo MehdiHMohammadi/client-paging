@@ -24,33 +24,17 @@ const usePaginatedFetch = (url, pageSize) => {
 
 export default usePaginatedFetch;
 
-// const usePaginatedFetch = (url, pageSize) => {
-//   const [loading, setLoading] = useState(true);
-//   const [data, setData] = useState([]);
+// function chunkArray(data, chunkSize) {
+//   const chunkedArray = [];
+//   for (let i = 0; i < data.length; i += chunkSize) {
+//     chunkedArray.push(data.slice(i, i + chunkSize));
+//   }
+//   return chunkedArray;
+// }
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch(url);
-//         if (!response.ok) {
-//           throw new Error(`HTTP Error! Status: ${response.status}`);
-//         }
+// // مثال استفاده:
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const pageSize =3;
+// const paginatedData = chunkArray(data, pageSize);
 
-//         const responseData = await response.json();
-//         const paginatedData = responseData.slice(0, pageSize);
-
-//         setData(paginatedData);
-//         setLoading(false);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchData();
-//   }, [url, pageSize]);
-
-//   return [loading, data];
-// };
-
-// export default usePaginatedFetch;
+// console.log(paginatedData); //Array [Array [1, 2, 3], Array [4, 5, 6], Array [7, 8, 9]]
